@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>WebPage2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+<div> WebPage2</div>
+<div style="text-align: right; font-style: italic;" >updated on <b> Date</b></div>
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>DATAPOINT</th>
+        <th>TAG</th>
+		<th>COMMENT</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+	    {'datapoint':'color', 'tag':'tagi: | tag8 | tag jh :','comment':' '},
+	    {'datapoint':'size','tag':'tag q|tag b|tag c|tag d','comment':' '},
+		{'datapoint':'part_number', 'tag':' ','comment':' '},
+	    {'datapoint':'model_name', 'tag':' ','comment':' '},
+		{'datapoint':'external_id', 'tag':'tag f','comment':' '},
+	    {'datapoint':'website_sku', 'tag':' ','comment':'can be noticed from url '},
+		{'datapoint':'brand', 'tag':' ','comment':' id sban | class brandLogo '},
+	    {'datapoint':'publisher', 'tag':' ','comment':' '},
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+
+							<td>${data[i].datapoint}</td>
+							<td>${data[i].tag}</td>
+							<td>${data[i].comment}</td>
+							
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+</body>
+</html>
